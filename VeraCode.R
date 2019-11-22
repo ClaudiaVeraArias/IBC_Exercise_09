@@ -13,7 +13,9 @@ library(ggplot2)
 
   # read the file
 
-W_H <- read.table("/Users/claudiaveraarias/Documents/ND_Classes/Fall_Semester_2019/Biocomputing/R/W12_BC/Tutorial/WeightvsHeight.txt")
-
+MalHem2 <- read.csv("/Users/claudiaveraarias/Documents/ND_Classes/Fall_Semester_2019/Biocomputing/R/W12_BC/Tutorial/Ecuador-Malaria.csv")
+  
   # scatter plot
 
+ggplot(data = MalHem2, aes(x = Age, y = Hemoglobin)) + geom_point(size = 1) +
+  geom_smooth(method = lm, linetype = "dashed", color = "darkblue", fill = "purple")
