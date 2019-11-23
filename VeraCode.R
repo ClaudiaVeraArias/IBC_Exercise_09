@@ -44,5 +44,10 @@ Data_mean <- data.frame(Region=c("North", "East", "South", "West"),
 
 ggplot(data = Data_mean, aes(x=Region, y=Mean, fill=Region)) +
   geom_bar(stat="identity") +
-  geom_text(aes(label=Mean), vjust=-0.3, size=2) +
+  geom_text(aes(label=Mean), vjust=-0.3, size=2.6) +
   theme_minimal() 
+
+  # Scatter plot of all the observatiobns
+
+ggplot(data = data, aes(y = observations, x=region)) + 
+  geom_jitter(aes(colour = region), size=0.2)
