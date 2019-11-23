@@ -51,3 +51,10 @@ ggplot(data = Data_mean, aes(x=Region, y=Mean, fill=Region)) +
 
 ggplot(data = data, aes(y = observations, x=region)) + 
   geom_jitter(aes(colour = region), size=0.2)
+
+ # Do the bar and scatter plots tell you diffetent stories? Why?
+    # Yes, they do becuase the bar plot just show each population mean observations 
+    # number. However, this number do not show the real observation distribution that
+    # scatter plot shows. It (scatter plot) helps us to see that east and west population
+    # have a more heterogenius distribution, on the other hand, north population shows
+    # a highly homogenous population and north population has two groups.
