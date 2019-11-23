@@ -19,3 +19,30 @@ MalHem2 <- read.csv("/Users/claudiaveraarias/Documents/ND_Classes/Fall_Semester_
 
 ggplot(data = MalHem2, aes(x = Age, y = Hemoglobin)) + geom_point(size = 1) +
   geom_smooth(method = lm, linetype = "dashed", color = "darkblue", fill = "purple")
+
+# 2) Write a script that generates two figutes that sumamrize the data. First, show a 
+     # barplot of the mean of the four population. Second, show a scatter plot of all the 
+     # observatiobns within a population in your scatter plot.
+
+  # read the file 
+
+data <- read.csv("/Users/claudiaveraarias/Documents/ND_Classes/Fall_Semester_2019/Biocomputing/R/W12_BC/Tutorial/IBC_Exercise_09-master/data.txt", header = TRUE)
+
+  # barplot of the mean of the four population
+
+north <- data[data$region == "north",]
+north_mean <- mean(north$observations)
+east <- data[data$region == "east",]
+east_mean <- mean(east$observations)
+south <- data[data$region == "south",]
+south_mean <- mean(south$observations)
+west <- data[data$region == "west",]
+west_mean <- mean(west$observations)
+
+Data_mean <- data.frame(Region=c("North", "East", "South", "West"),
+  Mean=c(north_mean, east_mean, south_mean, west_mean))
+
+ggplot(data = Data_mean, aes(x=Region, y=Mean, fill=Region)) +
+  geom_bar(stat="identity") +
+  geom_text(aes(label=Mean), vjust=-0.3, size=2) +
+  theme_minimal() 
