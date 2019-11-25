@@ -1,15 +1,16 @@
 
 #Exercise 9
 
-# 1) Produce a scatter plot of those two variables that includes a trend line
-
-  # select the work directory
+# select the work directory
 
 setwd('/Users/claudiaveraarias/Documents/ND_Classes/Fall_Semester_2019/Biocomputing/R/W12_BC/Tutorial/')
 
-  # select the package ggplot2
+  # select the package ggplot2 and cowplot
 
 library(ggplot2)
+library(cowplot)
+
+# 1) Produce a scatter plot of those two variables that includes a trend line
 
   # read the file
 
@@ -42,15 +43,19 @@ west_mean <- mean(west$observations)
 Data_mean <- data.frame(Region=c("North", "East", "South", "West"),
   Mean=c(north_mean, east_mean, south_mean, west_mean))
 
-ggplot(data = Data_mean, aes(x=Region, y=Mean, fill=Region)) +
+a <- ggplot(data = Data_mean, aes(x=Region, y=Mean, fill=Region)) +
   geom_bar(stat="identity") +
   geom_text(aes(label=Mean), vjust=-0.3, size=2.6) +
   theme_minimal() 
 
   # Scatter plot of all the observatiobns
 
-ggplot(data = data, aes(y = observations, x=region)) + 
+b <- ggplot(data = data, aes(y = observations, x=region)) + 
   geom_jitter(aes(colour = region), size=0.2)
+
+  # Graphs A and B together
+
+plot_grid(a, b, labels = c("A", "B"), label_size = 10)
 
  # Do the bar and scatter plots tell you diffetent stories? Why?
     # Yes, they do becuase the bar plot just show each population mean observations 
