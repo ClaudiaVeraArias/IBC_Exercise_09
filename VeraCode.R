@@ -1,9 +1,9 @@
 
 #Exercise 9
 
-# select the work directory
+# select the working directory
 
-setwd('/Users/claudiaveraarias/Documents/ND_Classes/Fall_Semester_2019/Biocomputing/R/W12_BC/Tutorial/')
+setwd('/pathway/IBC_Exercise_09-master/')
 
   # select the package ggplot2 and cowplot
 
@@ -13,8 +13,9 @@ library(cowplot)
 # 1) Produce a scatter plot of those two variables that includes a trend line
 
   # read the file
+    # The file that I used is "Ecuador-Malaria.csv" 
 
-MalHem2 <- read.csv("/Users/claudiaveraarias/Documents/ND_Classes/Fall_Semester_2019/Biocomputing/R/W12_BC/Tutorial/Ecuador-Malaria.csv")
+MalHem2 <- read.csv("/pathway/IBC_Exercise_09-master/Ecuador-Malaria.csv")
   
   # scatter plot
 
@@ -27,7 +28,7 @@ ggplot(data = MalHem2, aes(x = Age, y = Hemoglobin)) + geom_point(size = 1) +
 
   # read the file 
 
-data <- read.csv("/Users/claudiaveraarias/Documents/ND_Classes/Fall_Semester_2019/Biocomputing/R/W12_BC/Tutorial/IBC_Exercise_09-master/data.txt", header = TRUE)
+data <- read.csv("/pathway/IBC_Exercise_09-master/data.txt", header = TRUE)
 
   # A) barplot of the mean of the four population
 
