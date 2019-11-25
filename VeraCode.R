@@ -29,7 +29,7 @@ ggplot(data = MalHem2, aes(x = Age, y = Hemoglobin)) + geom_point(size = 1) +
 
 data <- read.csv("/Users/claudiaveraarias/Documents/ND_Classes/Fall_Semester_2019/Biocomputing/R/W12_BC/Tutorial/IBC_Exercise_09-master/data.txt", header = TRUE)
 
-  # barplot of the mean of the four population
+  # A) barplot of the mean of the four population
 
 north <- data[data$region == "north",]
 north_mean <- mean(north$observations)
@@ -48,7 +48,7 @@ a <- ggplot(data = Data_mean, aes(x=Region, y=Mean, fill=Region)) +
   geom_text(aes(label=Mean), vjust=-0.3, size=2.6) +
   theme_minimal() 
 
-  # Scatter plot of all the observatiobns
+  # B) Scatter plot of all the observatiobns
 
 b <- ggplot(data = data, aes(y = observations, x=region)) + 
   geom_jitter(aes(colour = region), size=0.2)
